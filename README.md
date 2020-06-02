@@ -44,3 +44,6 @@ app.on('ready', createWindow)
     and Electron <script>document.write(process.versions.electron)</script>.
   </body>
 </html>
+
+#Run the app
+npm start
