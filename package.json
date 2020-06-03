@@ -9,13 +9,13 @@
     "dist": "electron-builder",
     "dist2": "yarn compile && electron-builder",
     "dist2:dir": "yarn dist --dir -c.compression=store -c.mac.identity=null",
-    "build:osx": "build --mac",
+    "build:osx": "electron-builder --mac",
     "build:linux": "npm run build:linux32 && npm run build:linux64",
-    "build:linux32": "build --linux --ia32",
-    "build:linux64": "build --linux --x64",
+    "build:linux32": "electron-builder --linux --ia32",
+    "build:linux64": "electron-builder --linux --x64",
     "build:win": "npm run build:win32 && npm run build:win64",
-    "build:win32": "build --win --ia32",
-    "build:win64": "build --win --x64"
+    "build:win32": "electron-builder --win --ia32",
+    "build:win64": "electron-builder --win --x64"
   },
   "author": "moon",
   "license": "Apache-2.0",
