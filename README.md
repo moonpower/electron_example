@@ -43,6 +43,7 @@ function createWindow () {
 app.on('ready', createWindow)
 
 5. create file "index.html" >
+```
 <!DOCTYPE html>
 <html>
   <head>
@@ -58,4 +59,4 @@ app.on('ready', createWindow)
     and Electron <script>document.write(process.versions.electron)</script>.
   </body>
 </html>
-
+```
