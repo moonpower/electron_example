@@ -1,3 +1,17 @@
+#module install
+$>npm install
+$>yarn install
+
+#Run the app
+$>npm start
+$>yarn start
+
+#build installer
+$>npm run build:win32
+$>yarn run build:win32
+
+#electron setting
+
 1. create file ".gitignore" > "node_modules/"
 2. create file "package.jgon" >
 {
@@ -45,5 +59,3 @@ app.on('ready', createWindow)
   </body>
 </html>
 
-#Run the app
-npm start
