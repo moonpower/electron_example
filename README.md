@@ -14,6 +14,7 @@ $>yarn run build:win32
 
 1. create file ".gitignore" > "node_modules/"
 2. create file "package.jgon" >
+```
 {
   "name": "your-app",
   "version": "0.1.0",
@@ -22,8 +23,10 @@ $>yarn run build:win32
     "start": "electron ."
   }
 }
+```
 3. $>npm install --save-electron
 4. create file "index.js" >
+```
 const { app, BrowserWindow } = require('electron')
 
 function createWindow () {
@@ -41,7 +44,7 @@ function createWindow () {
 }
 
 app.on('ready', createWindow)
-
+```
 5. create file "index.html" >
 ```
 <!DOCTYPE html>
