@@ -1,10 +1,16 @@
 {
   "name": "helloworld",
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "",
   "main": "./src/index.js",
+  "repository":{
+    "type":"git",
+    "url":"https://github.com/moonpower/electron_example.git"
+  },
   "scripts": {
     "start": "electron .",
+    "build-git":"electron-builder build --win --publish never",
+    "deploy":"electron-builder build --win --publish always",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "dist2": "yarn compile && electron-builder",
@@ -71,6 +77,7 @@
     }
   },
   "dependencies": {
+    "electron-updater": "^4.3.5",
     "minimist": "1.2.3"
   }
 }

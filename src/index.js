@@ -1,4 +1,5 @@
 const {app, BrowserWindow, ipcMain} = require('electron')
+const { autoUpdater } = require('electron-updater');
 const fs = require('fs')
 
 function createWindow(){
@@ -18,6 +19,18 @@ function createWindow(){
     win.once('ready-to-show',function(){
         win.show()
     })
+
+    win.once('ready-to-show',()=>{
+        autoUpdater.checkForUpdatesAndNotify();
+    });
+
+    autoUpdater.on('update-available',()=>{
+        win.webContents.send('update_available');
+    });
+
+    autoUpdater.on('update-downloaded',()=>{
+        win.webContents.send('update_downloaded');
+    });
 
     win.loadURL(`file:${__dirname}/index.html`);
     // win.loadURL('http://localhost:8080');
@@ -44,4 +57,12 @@ app.on('activate',()=>{
 
 ipcMain.on('online-status-changed',(event,status)=>{
     console.log(status)
+})
+
+ipcMain.on('app_version',(event)=>{
+    event.sender.send('app_version',{version:app.getVersion()});
+});
+
+ipcMain.on('restart_app',()=>{
+    autoUpdater.quitAndInstall();
 })
