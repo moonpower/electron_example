@@ -54,8 +54,13 @@
     window.addEventListener('online',updateOnlineStatus)
     window.addEventListener('offline',updateOnlineStatus)
 
-    updateOnlineStatus()
+    updateOnlineStatus();
+
+    //auto updater
     const version = document.getElementById('version');
+    const notification = document.getElementById('notification');
+    const message = document.getElementById('message');
+    const restartButton = document.getElementById('restart-button');
     
     ipcRenderer.send('app_version');
     ipcRenderer.on('app_version',(event,arg)=>{
@@ -63,13 +68,11 @@
       version.innerText = 'Version '+ arg.version;
     });
 
-    const notification = document.getElementById('notification');
-    const message = document.getElementById('message');
-    const restartButton = document.getElementById('restart-button');
 
     ipcRenderer.on('update_available',()=>{
       ipcRenderer.removeAllListeners('update_available');
       message.innerText = 'A new update is available. Downloading now...';
+      notification.classList.remove('hidden');
     });
 
     ipcRenderer.on('update_downloaded',()=>{
