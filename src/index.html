@@ -40,9 +40,9 @@
     </div>
   </body>
   <script>
-    require('../renderer/renderer.js');
+    require('./renderer/renderer.js');
     const { ipcRenderer} = require('electron')
-    
+ 
     const updateOnlineStatus = ()=>{
       ipcRenderer.send('online-status-changed',navigator.onLine?'online':'offline')
     }

@@ -1,16 +1,16 @@
 {
   "name": "helloworld",
-  "version": "1.0.2",
+  "version": "1.0.6",
   "description": "electron example with autoupdate",
-  "main": "./src/index.js",
-  "repository":{
-    "type":"git",
-    "url":"https://github.com/moonpower/electron_example.git"
+  "main": "./src/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/moonpower/electron_example.git"
   },
   "scripts": {
     "start": "electron .",
-    "build-git":"electron-builder build --win --publish never",
-    "deploy":"electron-builder build --win --publish always",
+    "build-git": "electron-builder build --win --publish never",
+    "deploy": "electron-builder build --win --publish always",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "dist2": "yarn compile && electron-builder",
@@ -51,7 +51,8 @@
     "win": {
       "target": [
         "zip",
-        "nsis"
+        "nsis",
+        "msi"
       ],
       "icon": "./resources/installer/Icon.ico"
     },

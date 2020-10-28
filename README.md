@@ -25,7 +25,7 @@ $>yarn run build:win32
 }
 ```
 3. $>npm install --save-electron
-4. create file "index.js" >
+4. create file "main.js" >
 ```
 const { app, BrowserWindow } = require('electron')
 
