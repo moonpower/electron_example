@@ -1,7 +1,7 @@
 {
   "name": "helloworld",
-  "version": "1.0.1",
-  "description": "",
+  "version": "1.0.2",
+  "description": "electron example with autoupdate",
   "main": "./src/index.js",
   "repository":{
     "type":"git",
@@ -32,7 +32,6 @@
   "build": {
     "productName": "HelloElectron",
     "appId": "com.electron.hello",
-    "asar": true,
     "protocols": {
       "name": "helloElectron",
       "schemes": [
