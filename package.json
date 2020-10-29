@@ -1,6 +1,6 @@
 {
   "name": "helloworld",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "electron example with autoupdate",
   "main": "./dist/main.js",
   "repository": {
@@ -10,8 +10,8 @@
   "scripts": {
     "build-tsc":"tsc",
     "start": "npm run build-tsc && electron .",
-    "build-git": "electron-builder build --win --publish never",
-    "deploy": "electron-builder build --win --publish always",
+    "build-git": "npm run build-tsc && electron-builder build --win --publish never",
+    "deploy": "npm run build-tsc && electron-builder build --win --publish always",
     "pack": "electron-builder --dir",
     "dist": "electron-builder",
     "dist2": "yarn compile && electron-builder",
