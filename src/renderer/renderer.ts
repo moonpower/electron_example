@@ -1,7 +1,8 @@
-const {remote,ipcRenderer} = require('electron');
-const {Menu} = remote;
-const {dialog} = remote;
-const {fs} = require('fs');
+import {remote,ipcRenderer} from 'electron';
+import * as fs from 'fs';
+
+const Menu =remote.Menu;
+const dialog = remote.dialog;
 
 var openFile = function() {
   dialog.showOpenDialog({
@@ -10,10 +11,10 @@ var openFile = function() {
     //   { name: "Images", extensions: ['jpg','png','gif']},
     //   { name: "All Files", extensions: ['*']}
     // ]
-  }).then(result=>{
+  }).then((result:any)=>{
     console.log(result.filePaths);
     // remote.getCurrentWindow().loadFile(result.filePaths);
-  }).catch(err =>{
+  }).catch((err:any) =>{
     console.log(err);
   })
 }
@@ -33,21 +34,21 @@ var onUpdateCheck = function(){
 }
 
 function saveFile(){
-  dialog.showSaveDialog().then((file)=>{
+  dialog.showSaveDialog({}).then((file:any)=>{
     if(file === undefined){
       console.log("You didn't save the file");
       return;
     }
     
     console.log(file);
-    fs.writeFile(file.filePath.toString(),"test contents",(err)=>{
+    fs.writeFile(file.filePath.toString(),"test contents",(err:any)=>{
       if(err){
         alert("An error ocurred creating the file "+ err.message);
       }
 
       alert("The file has been successfully saved");
     });
-  }).catch((err)=>{
+  }).catch((err:any)=>{
     if(err){
 
     }
@@ -93,7 +94,7 @@ const template = [
         click: function() {
           openDeveloperTool();
         },
-        accelerator: process === 'darwin'? 'Command+D': 'Ctrl+D'
+        accelerator: process.platform === 'darwin'? 'Command+D': 'Ctrl+D'
       },
       {
         label: 'Prefs-3',
@@ -116,6 +117,6 @@ const template = [
     accelerator: 'H'
   }
 ];
- 
-const menu = Menu.buildFromTemplate(template);
+
+let menu = Menu.buildFromTemplate(template);
 Menu.setApplicationMenu(menu);

@@ -1,9 +1,7 @@
-const {app, nativeImage, BrowserWindow, ipcMain, Tray, Menu} = require('electron')
-const { autoUpdater } = require('electron-updater');
+import {app, nativeImage, BrowserWindow, ipcMain, Tray, Menu} from 'electron';
+import {autoUpdater} from 'electron-updater';
 
-// const fs = require('fs')
-
-let mainWindow=null;
+let mainWindow:BrowserWindow = null;
 
 function createWindow(){
     mainWindow = new BrowserWindow({
@@ -19,7 +17,7 @@ function createWindow(){
             nodeIntegration:true //웹 페이지에 node모듈을 사용할지 여부. require를 사용할 수 있음.
         }
     })
-    mainWindow.loadFile('./src/index.html');
+    mainWindow.loadFile('index.html');
     mainWindow.on('closed',function(){
         mainWindow = null;
     });
@@ -35,6 +33,7 @@ function createWindow(){
 }
 
 let tray = null;
+
 function createTray(){
     tray = new Tray(nativeImage.createEmpty());
     tray.on("click",()=>{
@@ -77,11 +76,11 @@ app.on('activate',()=>{
     }
 })
 
-ipcMain.on('online-status-changed',(event,status)=>{
+ipcMain.on('online-status-changed',(event:any,status:any)=>{
     console.log(status)
 })
 
-ipcMain.on('app_version',(event)=>{
+ipcMain.on('app_version',(event:any)=>{
     event.sender.send('app_version',{version:app.getVersion()});
 });
 

@@ -2,13 +2,14 @@
   "name": "helloworld",
   "version": "1.0.6",
   "description": "electron example with autoupdate",
-  "main": "./src/main.js",
+  "main": "./dist/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/moonpower/electron_example.git"
   },
   "scripts": {
-    "start": "electron .",
+    "build-tsc":"tsc",
+    "start": "npm run build-tsc && electron .",
     "build-git": "electron-builder build --win --publish never",
     "deploy": "electron-builder build --win --publish always",
     "pack": "electron-builder --dir",
@@ -27,7 +28,8 @@
   "license": "Apache-2.0",
   "devDependencies": {
     "electron": "^7.1.3",
-    "electron-builder": "^21.2.0"
+    "electron-builder": "^21.2.0",
+    "typescript": "^4.0.5"
   },
   "build": {
     "productName": "HelloElectron",
@@ -72,7 +74,7 @@
     },
     "directories": {
       "buildResources": "resources/installer/",
-      "output": "dist/",
+      "output": "build/",
       "app": "."
     }
   },
