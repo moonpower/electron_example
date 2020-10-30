@@ -84,6 +84,6 @@ app.on('ready', createWindow)
 - [electron-json-storage](https://github.com/jviotti/electron-json-storage): json로컬 저장
 - [NeDB](https://github.com/louischatriot/nedb): DB
 - [chrome-tabs](https://github.com/adamschwartz/chrome-tabs): 크롬 탭 모양
-- 참고. [Electron-ko-commnunity](https://tinydew4.github.io/electron-ko/community/)
+- 참고. [Electron-commnunity](https://www.electronjs.org/community#boilerplates)
 - [node-hid](https://github.com/node-hid/node-hid): USB connector
 - [serialport](https://serialport.io/)
