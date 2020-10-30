@@ -87,3 +87,4 @@ app.on('ready', createWindow)
 - 참고. [Electron-commnunity](https://www.electronjs.org/community#boilerplates)
 - [node-hid](https://github.com/node-hid/node-hid): USB connector
 - [serialport](https://serialport.io/)
+- [electron-store](https://github.com/sindresorhus/electron-store)
