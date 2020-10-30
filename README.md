@@ -1,16 +1,29 @@
-#module install
+### Enviroment
+
+electron + typescript + electron-builder
+
+### module install
+```
 $>npm install
+or
 $>yarn install
+```
 
-#Run the app
+### Run the app
+```
 $>npm start
+or
 $>yarn start
+```
 
-#build installer
+### build installer
+```
 $>npm run build:win32
+or
 $>yarn run build:win32
+```
 
-#electron setting
+### electron setting
 
 1. create file ".gitignore" > "node_modules/"
 2. create file "package.jgon" >
@@ -45,7 +58,8 @@ function createWindow () {
 
 app.on('ready', createWindow)
 ```
-5. create file "index.html" >
+
+5. create file "index.html" 
 ```
 <!DOCTYPE html>
 <html>
@@ -63,3 +77,11 @@ app.on('ready', createWindow)
   </body>
 </html>
 ```
+
+### 라이브러리
+
+- [custom-electron-titlebar](https://github.com/AlexTorresSk/custom-electron-titlebar#readme) : vscode와 비슷한 타이틀 메뉴바
+- [electron-json-storage](https://github.com/jviotti/electron-json-storage): json로컬 저장
+- [NeDB](https://github.com/louischatriot/nedb): DB
+- [chrome-tabs](https://github.com/adamschwartz/chrome-tabs): 크롬 탭 모양
+- 참고. [Electron-ko-commnunity](https://tinydew4.github.io/electron-ko/community/)

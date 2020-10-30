@@ -1,14 +1,14 @@
 {
   "name": "helloworld",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "electron example with autoupdate",
-  "main": "./dist/main.js",
+  "main": "./dist/main-process/main.js",
   "repository": {
     "type": "git",
     "url": "https://github.com/moonpower/electron_example.git"
   },
   "scripts": {
-    "build-tsc":"tsc",
+    "build-tsc": "tsc",
     "start": "npm run build-tsc && electron .",
     "build-git": "npm run build-tsc && electron-builder build --win --publish never",
     "deploy": "npm run build-tsc && electron-builder build --win --publish always",
