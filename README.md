@@ -85,3 +85,5 @@ app.on('ready', createWindow)
 - [NeDB](https://github.com/louischatriot/nedb): DB
 - [chrome-tabs](https://github.com/adamschwartz/chrome-tabs): 크롬 탭 모양
 - 참고. [Electron-ko-commnunity](https://tinydew4.github.io/electron-ko/community/)
+- [node-hid](https://github.com/node-hid/node-hid): USB connector
+- [serialport](https://serialport.io/)
